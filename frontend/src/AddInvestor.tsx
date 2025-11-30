@@ -3,6 +3,7 @@ import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
 import { Label } from "./components/ui/label";
 import { Textarea } from "./components/ui/textarea";
+import { API_URL } from "./config";
 import {
   Select,
   SelectContent,
@@ -65,7 +66,8 @@ export default function App() {
       };
 
       // שליחה לAPI
-      const response = await fetch("http://127.0.0.1:8000/api/investors", {
+      const response = await fetch(`${API_URL}/investors`, {
+
         method: "POST",
         headers: {
           "Content-Type": "application/json",

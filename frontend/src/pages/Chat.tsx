@@ -11,14 +11,16 @@ interface Message {
 }
 
 export default function Chat() {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: "1",
-      type: "assistant",
-      text: "שלום! אני כאן כדי לעזור לך לנהל את המשקיעים שלך. תשאלי אותי כל שאלה בעברית!",
-      timestamp: new Date(),
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>(
+    [
+      {
+        id: "1",
+        type: "assistant",
+        text: "שלום! אני כאן כדי לעזור לך לנהל את המשקיעים שלך. תשאלי אותי כל שאלה בעברית!",
+        timestamp: new Date(),
+      },
+    ]
+  );
 
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -46,7 +48,7 @@ export default function Chat() {
     try {
       // --- FIXED: no JSON body, only query parameter ---
       const response = await fetch(
-        `http://127.0.0.1:8000/api/chat?message=${encodeURIComponent(
+        `https://investiq-c9p9.onrender.com/api/chat?message=${encodeURIComponent(
           userMessage.text
         )}`,
         {

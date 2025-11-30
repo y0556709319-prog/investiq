@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_URL = 'http://127.0.0.1:8000/api';
+const API_URL = 'https://investiq-c9p9.onrender.com/api';
+console.log("API URL:", API_URL);
+
 
 export interface Investor {
   id?: number;
