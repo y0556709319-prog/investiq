@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-const API_URL = 'https://investiq-c9p9.onrender.com/api';
+import { API_URL } from '../config';
 console.log("API URL:", API_URL);
 
 

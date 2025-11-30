@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Send, Loader } from "lucide-react";
+import { API_URL } from "../config";
 
 interface Message {
   id: string;
@@ -46,11 +47,8 @@ export default function Chat() {
     setIsLoading(true);
 
     try {
-      // --- FIXED: no JSON body, only query parameter ---
       const response = await fetch(
-        `https://investiq-c9p9.onrender.com/api/chat?message=${encodeURIComponent(
-          userMessage.text
-        )}`,
+        `${API_URL}/chat?message=${encodeURIComponent(userMessage.text)}`,
         {
           method: "POST",
           headers: {
