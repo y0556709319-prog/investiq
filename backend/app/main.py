@@ -13,7 +13,10 @@ app = FastAPI(title="InvestIQ API", version="1.0.0")
 # ⭐ CORS - חשוב מאוד!
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # כתובת הReact
+    allow_origins=[
+        "http://localhost:5173",           # Local development
+        "https://investiq-peach.vercel.app"  # Production ✅
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
